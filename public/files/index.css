@@ -1,0 +1,241 @@
+html,
+body,
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #293264;
+  --background-main-color: #F5F7FB;
+  --background-active-color: #4D5B9E;
+}
+
+body {
+
+  padding: 0;
+  margin: 0;
+}
+
+.bgshape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-main-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  color: var(--main-color);
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+.bgshape::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -125px;
+  right: -250px;
+  background-color: #FFFAD1;
+  width: 500px;
+  height: 250px;
+  border-radius: 60%;
+  transform: rotate(45deg) skew(-20deg, -10deg);
+  z-index: 10;
+}
+
+.bgshape::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -125px;
+  left: -250px;
+  background-color: #DEEBF8;
+  width: 400px;
+  height: 200px;
+  border-radius: 60%;
+  transform: rotate(225deg) skew(10deg, -20deg);
+  z-index: 10;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 400px;
+  width: 90%;
+  max-width: 1024px;
+  z-index: 100;
+  padding: 50px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.StartQuiz {
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.description {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.form-wrap {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+
+.form-select {
+  box-sizing: border-box;
+  width: 100%;
+
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+
+  cursor: pointer;
+
+  appearance: none;
+  background-color: transparent;
+
+  border: 1px solid var(--main-color);
+
+  border-radius: 0.25em;
+  padding: 0.5em;
+
+  /*Remove focus outline, will add on alternate element*/
+  outline: none;
+}
+
+
+/* Remove dropdown arrow in IE10 & IE11
+ @link https://www.filamentgroup.com/lab/select-css.html*/
+.form-select::-ms-expand {
+  display: none;
+}
+
+.form-select-option {
+  box-sizing: border-box;
+  width: 100%;
+
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+
+  cursor: pointer;
+
+  appearance: none;
+  background-color: var(--background-main-color);
+
+  /* Only affects Chrome*/
+  outline-color: var(--main-color);
+}
+
+.form-select-option:hover,
+.form-select-option:focus {
+  background-color: var(--background-active-color);
+  color: #fff;
+}
+
+.button {
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--background-active-color);
+  color: #fff;
+  font-size: 1rem;
+  padding: 1em 1.75em;
+  font-weight: bold;
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+
+.question {
+  width: 100%;
+  border-bottom: 1px solid var(--background-active-color);
+  margin-bottom: 2rem;
+}
+
+.question-title {
+  margin: 0;
+}
+
+.question-info {
+  margin-left: .5rem;
+  font-size: .9rem;
+  color: var(--main-color);
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+
+}
+
+.answer-wrap {
+  margin: 1rem 0 1.5rem 0;
+  cursor: pointer;
+  display: flex;
+}
+
+.answer {
+  cursor: pointer;
+  margin-right: 1rem;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  font-weight: bold;
+}
+
+.answer:has(> .answer-radio:disabled) {
+  cursor: not-allowed;
+}
+
+.answer:has(> .answer-radio:checked) {
+  background: var(--background-active-color);
+  color: #fff;
+}
+
+.answer-radio {
+  display: none;
+}
+
+.answer.wrong:has(> .answer-radio:checked) {
+  background: #F8BCBC;
+  color: var(--main-color);
+}
+
+.answer.right {
+  
+  background: #94D7A2;
+  color: var(--main-color);
+}
+
+.answer.right:has(> .answer-radio:checked) {
+  background: #94D7A2;
+  color: var(--main-color);
+}
