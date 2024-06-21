@@ -4,7 +4,7 @@ import ShowQuestion from './components/quizz/ShowQuestion';
 import ShowAnswer from './components/quizz/ShowAnswer';
 import { nanoid } from 'nanoid';
 
-export default () => {
+const App = () => {
   const [page, setPage] = useState(
     () => localStorage.getItem('pageState') || ''
   );
@@ -134,3 +134,7 @@ export default () => {
     </div>
   );
 };
+
+
+
+export default App;
