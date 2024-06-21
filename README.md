@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Quizzical</h1>
 
-An web application to test your knowledge and improve your memory
+A web application to test your knowledge and improve your memory
 
 
 
